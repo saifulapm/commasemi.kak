@@ -5,13 +5,12 @@ A Kakoune plugin for smart toggling of comma and semicolon at the end of lines. 
 ## ✨ Features
 
 - Toggle between comma and semicolon at line endings
-- Preserves inline comments
+- Preserves and skip inline comments
 - Smart toggle behavior:
   - If no punctuation exists → adds the character
   - If same character exists → removes it
   - If different character exists → replaces it
-- Works with multiple comment styles across languages
-- Supports Visual mode for multiple line toggling
+- Works with multiple comment styles across languages via kakoune `%opt{comment_line}` option.
 - Supports JavaScript, TypeScript, PHP, Python, Ruby, Rust, Go, C/C++, Lua, HTML, CSS, and more
 
 ## Install
@@ -35,6 +34,7 @@ bundle commasemi https://github.com/saifulapm/commasemi.kak %{
 This plugin relies on Kakoune’s built-in `comment_line` option to detect and skip
 commented lines. As a result, it automatically adapts to the active filetype and
 works correctly with languages that define their comment prefix (e.g. //, #, --, etc.).
+if any lang `comment_line` opt not set, this may not work properly.
 
 ## Similar neovim plugin
 
